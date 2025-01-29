@@ -14,8 +14,8 @@ Some use cases:
 
 ## Configuration
 
-Prior to version 4, Tailwind used a config file to determine what categories of classes to load. With version 4, that configuration happens in a CSS file.
-To disable categories, for example the all color classes, you use the following syntax:
+Prior to version 4, Tailwind used a config file to determine what categories of classes to enable or redefine. With version 4, that configuration happens in a CSS file.
+To disable categories, for example all color utility classes, you use the following syntax:
 
 ```css
 @theme {
@@ -23,7 +23,7 @@ To disable categories, for example the all color classes, you use the following 
 }
 ```
 
-You can also reassign utility classes. Here we're disabling the default breakpoint classes and creating new ones.
+You can also reassign utility classes. Here we're disabling the breakpoint category and creating new ones.
 
 ```css
 @theme {
@@ -35,4 +35,11 @@ You can also reassign utility classes. Here we're disabling the default breakpoi
 }
 ```
 
-Note: this approach works for "themeable" categories, that is, groups of classes that could change from project to project. The Tailwind docs have a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Layout classes like `flex` cannot be disabled using the `@theme` approach.
+Note: this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Layout classes like `flex` cannot be disabled using the `@theme` approach.
+
+## Editor setup
+
+1. Developers should set up their IDE to use the [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) plugin. This provides a number of useful features, including autocomplete and syntax highlighting.
+2. Also helpful is Tailwind's [Prettier plug-in](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) that sorts classes in the editor.
+
+See the [Editor setup](https://tailwindcss.com/docs/editor-setup) section in Tailwind's documentation for more details.
