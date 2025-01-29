@@ -2,7 +2,10 @@
 
 This is a test of using Tailwind v4 with Next.js to determine how best to disable categories and re-map them to custom themes.
 
-For example, we may want to use our own spacing values from our design system instead of the default Tailwind theme.
+Some use cases:
+
+1. Disable categories of classes we don't want available, like `bg-red-500`.
+2. Reassign categories to use design system values.
 
 ```diff
 - <div class="mb-4">box</div>
