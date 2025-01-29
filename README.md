@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tailwind v4 testing
 
-## Getting Started
+This is a test of using Tailwind v4 with Next.js to determine how best to disable categories and re-map them to custom themes.
 
-First, run the development server:
+For example, we may want to use our own spacing values from our design system instead of the default Tailwind theme.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```diff
+- <div class="mb-4">box</div>
++ <div class="mb-sm">box</div>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Prior to version 4, Tailwind used a config file to determine what categories of classes to load. With version 4, that configuration happens in a CSS file.
+To disable categories, for example the all color classes, you use the following syntax:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```css
+@theme {
+  --color-*: initial;
+}
+```
 
-## Learn More
+You can also reassign utility classes. Here we're disabling the default breakpoint classes and creating new ones.
 
-To learn more about Next.js, take a look at the following resources:
+```css
+@theme {
+  --breakpoint-*: initial;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  /* Custom values */
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 60rem;
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: this approach works for "themeable" categories, that is, groups of classes that could change from project to project. The Tailwind docs have a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Layout classes like `flex` cannot be disabled using the `@theme` approach.
