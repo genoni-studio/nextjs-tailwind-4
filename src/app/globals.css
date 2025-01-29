@@ -1,10 +1,5 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -23,20 +18,28 @@
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Disable most categories */
+  --animate-*: initial;
+  --aspect-*: initial;
+  --blur-*: initial;
+  --breakpoint-*: initial;
+  --color-*: initial;
+  --container-*: initial;
+  --drop-shadow-*: initial;
+  --ease-*: initial;
+  --font-*: initial;
+  --font-weight-*: initial;
+  --inset-shadow-*: initial;
+  --leading-*: initial;
+  --perspective-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --spacing-*: initial;
+  --text-*: initial;
+  --tracking-*: initial;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Custom values */
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 60rem;
 }
