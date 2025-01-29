@@ -37,7 +37,7 @@ You can also reassign utility classes. Here we're disabling the breakpoint categ
 
 See [`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main/src/app/globals.css) for a more complete example.
 
-Note: this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Layout classes like `flex` cannot be disabled using the `@theme` approach.
+**Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Layout classes like `flex` cannot be disabled using the `@theme` approach.
 
 ## Editor setup
 
