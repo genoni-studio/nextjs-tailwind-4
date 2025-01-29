@@ -5,7 +5,7 @@ This is a test of using Tailwind v4 with Next.js to determine how best to disabl
 Some use cases:
 
 1. Disable categories of classes we don't want available, like `bg-red-500`.
-2. Reassign categories to use design system values.
+2. Reassign categories to use design system values. For example, so developers could reference the design system's sizing scale of `sm`, `md`, etc.
 
 ```diff
 - <div class="mb-4">box</div>
