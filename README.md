@@ -6,11 +6,11 @@ Use cases:
 
 1. Disable categories of classes we don't want available, like `bg-red-500`.
 2. Reassign categories to use design system values. For example, use the design system's sizing scale of `sm`, `md`, etc.
-3. Prevent Tailwind's default CSS resets from loading
+3. Prevent Tailwind's default CSS resets from loading.
 
 ## Configuration
 
-Prior to version 4, Tailwind used a config file to determine what categories of classes to enable or redefine. With version 4, that configuration happens in a CSS file.
+Prior to version 4, Tailwind used a `tailwind.config.js` [configuration file](https://v3.tailwindcss.com/docs/theme) to determine the categories of classes to enable or redefine. With version 4, that configuration happens in a CSS file.
 
 ### Importing Tailwind
 
@@ -26,7 +26,7 @@ Which imports three files:
 - `preflight.css`
 - `utilities.css`
 
-It's possible to import these selectively. For example, if the project already has its `reset.css`, you can import only `theme.css` and `utilities.css`
+It's possible to import these selectively. For example, if the project already has a `reset.css`, you can import only `theme.css` and `utilities.css`
 
 ```diff
 + @layer theme, base, components, utilities;
@@ -47,7 +47,7 @@ To disable categories, for example all color utility classes, you use the follow
 }
 ```
 
-You can also reassign utility classes. Here we're disabling the breakpoint category and creating new ones.
+You can also reassign utility classes. Here we're disabling the breakpoint category and custom breakpoints.
 
 ```css
 @theme {
@@ -58,7 +58,7 @@ You can also reassign utility classes. Here we're disabling the breakpoint categ
   --breakpoint-sm: 30rem;
   --breakpoint-md: 60rem;
 
-  /* or */
+  /* or ... */
   --breakpoint-tablet: 30rem;
   --breakpoint-desktop: 60rem;
 }
@@ -70,7 +70,7 @@ and in the HTML:
 <div class="sm:flex-col">box</div>
 ```
 
-or
+or, if using the `tablet` configuration:
 
 ```html
 <div class="tablet:flex-col">box</div>
@@ -100,7 +100,9 @@ and in the HTML:
 
 ```diff
 - <div class="mb-4">box</div>
+- <div class="p-2">box</div>
 + <div class="mb-sm">box</div>
++ <div class="p-x-sm">box</div>
 ```
 
 See [`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main/src/app/globals.css) for a more complete example.
