@@ -111,6 +111,8 @@ and in the HTML:
 
 ## Dark mode
 
+### Option 1
+
 Dark mode operates much as it did before. We defined a variable with a light color and scope the dark variable.
 
 ```css
@@ -133,7 +135,38 @@ Dark mode operates much as it did before. We defined a variable with a light col
 }
 ```
 
-By adding the `@utility` the class appears in the IDE.
+### Option 2
+
+This uses the more modern [`light-dark()` CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) and is easier to parse. It also makes forcing modes easier.
+
+```css
+:root {
+  color-scheme: light dark;
+}
+
+:root {
+  --color-black: black;
+  --color-white: white;
+}
+
+/* Used to force dark/light mode. */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@utility fg-base {
+  color: light-dark(var(--color-black), var(--color-white));
+}
+
+@utility bg-base {
+  background-color: light-dark(var(--color-white), var(--color-black));
+}
+```
 
 ## Custom classes
 
