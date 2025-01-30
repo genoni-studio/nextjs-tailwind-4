@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -39,12 +39,12 @@
   --text-*: initial;
   --tracking-*: initial;
 
-  /* Custom breakpoints */
+  /* Custom breakpoints, will autocomplete in IDE */
   --breakpoint-sm: 40rem;
   --breakpoint-md: 64rem;
   --breakpoint-lg: 80rem;
 
-  /* Custom spacing */
+  /* Custom spacing, will autocomplete in IDE */
   --spacing-xxx-sm: 0.125rem;
   --spacing-xx-sm: 0.25rem;
   --spacing-x-sm: 0.5rem;
@@ -54,4 +54,9 @@
   --spacing-x-lg: 1.5rem;
   --spacing-xx-lg: 2rem;
   --spacing-xxx-lg: 2.5rem;
+}
+
+/* Custom utility class, will autocomplete in IDE */
+@utility foobar {
+  flex-wrap: wrap;
 }
