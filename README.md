@@ -111,9 +111,11 @@ and in the HTML:
 
 ## Dark mode
 
+In both options, a user preference would use JavaScript to set a `data-attr` or `class` to control light/dark mode.
+
 ### Option 1
 
-Dark mode operates much as it did before. We defined a variable with a light color and scope the dark variable.
+This is essential the same as it has in the past. We define a variable with a light color and scope the dark color.
 
 ```css
 :root {
@@ -126,6 +128,8 @@ Dark mode operates much as it did before. We defined a variable with a light col
   --color-bg-base: black;
 }
 
+/* Custom utility classes */
+
 @utility fg-base {
   color: var(--color-fg-base);
 }
@@ -137,7 +141,13 @@ Dark mode operates much as it did before. We defined a variable with a light col
 
 ### Option 2
 
-This uses the more modern [`light-dark()` CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), which has [good browser support](https://caniuse.com/?search=light-dark), and is easier to grep and troubleshoot. It also makes forcing modes easier.
+This uses the more modern [`light-dark()` CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark). This has a few advantages:
+
+1. Easier to grep and troubleshoot.
+2. All CSS variables are grouped together under `:root` instead of dividing up and scoping the light and dark variables.
+3. Makes forcing light or dark mode easier.
+
+It has [good browser support](https://caniuse.com/?search=light-dark).
 
 ```css
 :root {
@@ -158,6 +168,8 @@ This uses the more modern [`light-dark()` CSS function](https://developer.mozill
 [data-theme="dark"] {
   color-scheme: dark;
 }
+
+/* Custom utility classes */
 
 @utility fg-base {
   color: light-dark(var(--color-black), var(--color-white));
