@@ -109,10 +109,22 @@ See [`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main
 
 **Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled using the `@theme` approach.
 
+### Custom classes
+
+Entirely new classes can be added:
+
+```css
+@utility foobar {
+  background: purple;
+}
+```
+
+By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, it won't be included in the bundle if not used.
+
 ## Editor setup
 
 1. Developers should use the [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) plugin. This provides a number of useful features, including autocomplete and syntax highlighting.
-2. Also helpful is Tailwind's [Prettier plug-in](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) that sorts classes in the editor. This plug-in has been installed in this demo repo.
+2. Also strongly recommended is Tailwind's [Prettier plug-in](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) that sorts classes in the editor. This plug-in has been installed in this demo repo.
 
 See the [Editor setup](https://tailwindcss.com/docs/editor-setup) section in Tailwind's documentation for more details.
 
