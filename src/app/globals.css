@@ -60,3 +60,34 @@
 @utility foobar {
   flex-wrap: wrap;
 }
+
+/* 
+  Dark mode uses same approach as custom class above.
+ */
+
+:root {
+  color-scheme: light dark;
+}
+
+:root {
+  --color-black: black;
+  --color-white: white;
+}
+
+/* Used to force dark/light mode. */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@utility fg-base {
+  color: light-dark(var(--color-black), var(--color-white));
+}
+
+@utility bg-base {
+  background-color: light-dark(var(--color-white), var(--color-black));
+}

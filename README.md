@@ -109,7 +109,33 @@ and in the HTML:
 
 **Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled or remapped using the `@theme` approach.
 
-### Custom classes
+## Dark mode
+
+Dark mode operates much as it did before. We defined a variable with a light color and scope the dark variable.
+
+```css
+:root {
+  --color-fg-base: black;
+  --color-bg-base: white;
+}
+
+[data-theme="dark"] {
+  --color-fg-base: white;
+  --color-bg-base: black;
+}
+
+@utility fg-base {
+  color: var(--color-fg-base);
+}
+
+@utility bg-base {
+  background-color: var(--color-bg-base);
+}
+```
+
+By adding the `@utility` the class appears in the IDE.
+
+## Custom classes
 
 Entirely new classes can be added:
 

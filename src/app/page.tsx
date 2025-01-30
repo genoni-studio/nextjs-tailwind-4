@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="foo flex list-disc flex-col sm:flex-row">
+    <div className="foobar fg-base flex list-disc flex-col sm:flex-row">
       <div className="pb-xxx-sm mb-sm flex">
         Photosynthesis is the ultimate source of energy and food for nearly all
         life on earth.
