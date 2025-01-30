@@ -168,6 +168,11 @@ This uses the more modern [`light-dark()` CSS function](https://developer.mozill
 }
 ```
 
+#### Usage:
+
+- [`layout.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/layout.tsx#L26) has example of `fg-base` and `[data-theme="dark"]`.
+- [`page.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/page.tsx#L3) has example of `fg-base`.
+
 By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, this CSS won't be included in the bundle if the class is not used.
 
 ## Custom classes
