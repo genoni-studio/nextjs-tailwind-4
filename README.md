@@ -151,10 +151,9 @@ It has [good browser support](https://caniuse.com/?search=light-dark).
 
 ```css
 :root {
+  /* Required for `light-dark()` usage */
   color-scheme: light dark;
-}
 
-:root {
   --color-black: black;
   --color-white: white;
 }
