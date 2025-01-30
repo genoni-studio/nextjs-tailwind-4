@@ -137,7 +137,7 @@ Dark mode operates much as it did before. We defined a variable with a light col
 
 ### Option 2
 
-This uses the more modern [`light-dark()` CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) and is easier to parse. It also makes forcing modes easier.
+This uses the more modern [`light-dark()` CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark), which has [good browser support](https://caniuse.com/?search=light-dark), and is easier to grep and troubleshoot. It also makes forcing modes easier.
 
 ```css
 :root {
@@ -149,7 +149,7 @@ This uses the more modern [`light-dark()` CSS function](https://developer.mozill
   --color-white: white;
 }
 
-/* Used to force dark/light mode. */
+/* Force dark/light mode  */
 
 [data-theme="light"] {
   color-scheme: light;
@@ -168,17 +168,17 @@ This uses the more modern [`light-dark()` CSS function](https://developer.mozill
 }
 ```
 
+By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, this CSS won't be included in the bundle if the class is not used.
+
 ## Custom classes
 
-Entirely new classes can be added:
+Similar to above, entirely custom classes can be added:
 
 ```css
 @utility foobar {
   background: purple;
 }
 ```
-
-By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, this CSS won't be included in the bundle if the class is not used.
 
 ## Editor setup
 
