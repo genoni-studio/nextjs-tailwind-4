@@ -119,7 +119,7 @@ Entirely new classes can be added:
 }
 ```
 
-By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, it won't be included in the bundle if not used.
+By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, this CSS won't be included in the bundle if the class is not used.
 
 ## Editor setup
 
