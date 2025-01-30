@@ -49,7 +49,7 @@ To disable categories, for example all color utility classes, you use the follow
 }
 ```
 
-You can also reassign utility classes. Here we're disabling the breakpoint category and custom breakpoints.
+You can also reassign utility classes. Here we're disabling the breakpoint category and adding custom breakpoints.
 
 ```css
 @theme {
