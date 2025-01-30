@@ -12,6 +12,8 @@ Use cases:
 
 Prior to version 4, Tailwind used a `tailwind.config.js` [configuration file](https://v3.tailwindcss.com/docs/theme) to determine the categories of classes to enable or redefine. With version 4, that configuration happens in a CSS file.
 
+[`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main/src/app/globals.css) is an example of configuring Tailwind v4 and is discussed here.
+
 ### Importing Tailwind
 
 To use all of Tailwind, you add a single import statement in a CSS file:
@@ -104,8 +106,6 @@ and in the HTML:
 + <div class="mb-sm">box</div>
 + <div class="p-x-sm">box</div>
 ```
-
-See [`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main/src/app/globals.css) for a more complete example.
 
 **Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled using the `@theme` approach.
 
