@@ -72,7 +72,7 @@ and in the HTML:
 <div class="sm:flex-col">box</div>
 ```
 
-or, if using the `tablet` configuration:
+or, if using the `--breakpoint-tablet: 30rem` configuration:
 
 ```html
 <div class="tablet:flex-col">box</div>
