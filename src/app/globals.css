@@ -39,7 +39,19 @@
   --text-*: initial;
   --tracking-*: initial;
 
-  /* Custom values */
-  --breakpoint-sm: 30rem;
-  --breakpoint-md: 60rem;
+  /* Custom breakpoints */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 64rem;
+  --breakpoint-lg: 80rem;
+
+  /* Custom spacing */
+  --spacing-xxx-sm: 0.125rem;
+  --spacing-xx-sm: 0.25rem;
+  --spacing-x-sm: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.25rem;
+  --spacing-x-lg: 1.5rem;
+  --spacing-xx-lg: 2rem;
+  --spacing-xxx-lg: 2.5rem;
 }
