@@ -1,17 +1,12 @@
 # Tailwind v4 testing
 
-This is a test of using Tailwind v4 with Next.js to determine how install and control the classes it provides.
+This is a test of using Tailwind v4 with Next.js to determine how install and control the classes Tailwind provides.
 
-Some use cases:
+Use cases:
 
 1. Disable categories of classes we don't want available, like `bg-red-500`.
 2. Reassign categories to use design system values. For example, use the design system's sizing scale of `sm`, `md`, etc.
 3. Prevent Tailwind's default CSS resets from loading
-
-```diff
-- <div class="mb-4">box</div>
-+ <div class="mb-sm">box</div>
-```
 
 ## Configuration
 
@@ -56,12 +51,56 @@ You can also reassign utility classes. Here we're disabling the breakpoint categ
 
 ```css
 @theme {
+  /* Disables Tailwind's defaults */
   --breakpoint-*: initial;
 
   /* Custom values */
   --breakpoint-sm: 30rem;
   --breakpoint-md: 60rem;
+
+  /* or */
+  --breakpoint-tablet: 30rem;
+  --breakpoint-desktop: 60rem;
 }
+```
+
+and in the HTML:
+
+```html
+<div class="sm:flex-col">box</div>
+```
+
+or
+
+```html
+<div class="tablet:flex-col">box</div>
+```
+
+Similarly, we can reassign the default `spacing` classes to use the design system scale.
+
+```css
+@theme {
+  /* Disables Tailwind's defaults */
+  --spacing-*: initial;
+
+  /* Custom values */
+  --spacing-xxx-sm: 0.125rem;
+  --spacing-xx-sm: 0.25rem;
+  --spacing-x-sm: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.25rem;
+  --spacing-x-lg: 1.5rem;
+  --spacing-xx-lg: 2rem;
+  --spacing-xxx-lg: 2.5rem;
+}
+```
+
+and in the HTML:
+
+```diff
+- <div class="mb-4">box</div>
++ <div class="mb-sm">box</div>
 ```
 
 See [`globals.css`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/main/src/app/globals.css) for a more complete example.
