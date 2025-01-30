@@ -127,7 +127,3 @@ By using the `@utility` function, Tailwind will be aware of this class and will 
 2. Also strongly recommended is Tailwind's [Prettier plug-in](https://github.com/tailwindlabs/prettier-plugin-tailwindcss), installed in the project, that sorts classes and cleans up whitespace in the editor. This plug-in has been installed in this demo repo.
 
 See the [Editor setup](https://tailwindcss.com/docs/editor-setup) section in Tailwind's documentation for more details.
-
-## Known issues
-
-1. I found one issue with [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) plugin where disabled spacing values, like `pb-2`, appeared in the VS Code autocomplete even though there were, in fact, disabled in Tailwind and would not apply. There is an [issue](https://github.com/tailwindlabs/tailwindcss-intellisense/issues/1133) already tracking this problem and should be fixed by early Feb 2025.
