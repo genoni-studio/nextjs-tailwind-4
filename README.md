@@ -1,6 +1,6 @@
 # Tailwind v4 testing
 
-This is a test of using Tailwind v4 with Next.js to determine how install and control the classes Tailwind provides.
+This is a test of using Tailwind v4 with Next.js to determine how install and configure Tailwind v4.
 
 Use cases:
 
@@ -107,7 +107,7 @@ and in the HTML:
 + <div class="p-x-sm">box</div>
 ```
 
-**Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled using the `@theme` approach.
+**Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled or remapped using the `@theme` approach.
 
 ### Custom classes
 
