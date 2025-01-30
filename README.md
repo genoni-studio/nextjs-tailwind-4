@@ -113,6 +113,11 @@ and in the HTML:
 
 In both options, a user preference would use JavaScript to set a `data-attr` or `class` to control light/dark mode.
 
+Additionally, by using the `@utility` function to define a new class:
+
+1. Tailwind will be aware of this class and will include it in the autocomplete.
+2. Like other Tailwind classes, the CSS won't be included in the bundle if the class is not used.
+
 ### Option 1
 
 This is essential the same as it has in the past. We define a variable with a light color and scope the dark color.
@@ -183,8 +188,6 @@ It has [good browser support](https://caniuse.com/?search=light-dark).
 
 - [`layout.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/layout.tsx#L26) has example of `bg-base` and `[data-theme="dark"]`.
 - [`page.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/page.tsx#L3) has example of `fg-base`.
-
-By using the `@utility` function, Tailwind will be aware of this class and will include it in the autocomplete. And like all Tailwind classes, this CSS won't be included in the bundle if the class is not used.
 
 ## Custom classes
 
