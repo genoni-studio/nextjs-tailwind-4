@@ -109,7 +109,7 @@ and in the HTML:
 
 **Note:** this approach works for "themeable" categories, that is, groups of classes that could change from project to project. This includes color, font sizes, spacing, etc. Tailwind's documentation has a [list of themeable categories](https://tailwindcss.com/docs/theme#theme-variable-namespaces). Utility categories like `flex` cannot be disabled or remapped using the `@theme` approach.
 
-## Dark mode
+## Dark mode & themes
 
 In both options, a user preference would use JavaScript to set a `data-attr` or `class` to control light/dark mode.
 
@@ -128,7 +128,7 @@ This is essential the same as it has in the past. We define a variable with a li
   --color-bg-base: white;
 }
 
-[data-theme="dark"] {
+[data-mode="dark"] {
   --color-fg-base: white;
   --color-bg-base: black;
 }
@@ -159,17 +159,17 @@ It has [good browser support](https://caniuse.com/?search=light-dark).
   /* Required for `light-dark()` usage */
   color-scheme: light dark;
 
-  --color-black: black;
-  --color-white: white;
+  --color-black: #111;
+  --color-white: #fff;
 }
 
 /* Force dark/light mode  */
 
-[data-theme="light"] {
+[data-mode="light"] {
   color-scheme: light;
 }
 
-[data-theme="dark"] {
+[data-mode="dark"] {
   color-scheme: dark;
 }
 
@@ -184,9 +184,37 @@ It has [good browser support](https://caniuse.com/?search=light-dark).
 }
 ```
 
+### Theming 
+
+To add themes, we would introduce another level to enable scoped variables to pass through.
+
+```css
+[data-theme="contrast"] {
+ -color-fg-light: var(--color-black);
+ -color-bg-light: var(--color-white);
+ -color-fg-dark: var(--color-white);
+ -color-bg-dark: var(--color-black);
+}
+
+[data-theme="fun"] {
+ -color-fg-light: var(--color-yellow);
+ -color-bg-light: var(--color-purple);
+ -color-fg-dark: var(--color-orange);
+ -color-bg-dark: var(--color-black);
+}
+
+@utility fg-base {
+  color: light-dark(var(--color-fg-light), var(--color-fg-dark));
+}
+
+@utility bg-base {
+  backgrond-color: light-dark(var(--color-bg-light), var(--color-bg-dark));
+}
+```
+
 #### Usage:
 
-- [`layout.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/layout.tsx#L26) has example of `bg-base` and `[data-theme="dark"]`.
+- [`layout.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/layout.tsx#L26) has example of `bg-base` and `[data-mode="dark"]`.
 - [`page.tsx`](https://github.com/genoni-studio/nextjs-tailwind-4/blob/f24d377b4e661507e19c1432461eef48cba3c61a/src/app/page.tsx#L3) has example of `fg-base`.
 
 ## Custom classes
@@ -194,7 +222,7 @@ It has [good browser support](https://caniuse.com/?search=light-dark).
 Similar to above, entirely custom classes can be added:
 
 ```css
-@utility foobar {
+@utility my-custom-class {
   background: purple;
 }
 ```
